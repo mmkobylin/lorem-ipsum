@@ -14,11 +14,10 @@ function App() {
     e.preventDefault();
   }
 
-  let handleChange = (e) => {
+  const handleChange = (e) => {
     e.preventDefault()
-    setCount(count = count++ )
-    
-  }
+    console.log('hello')
+   }
  
   
   return (
@@ -29,7 +28,8 @@ function App() {
       <form
         onSubmit = { handleSubmit }
       >
-        <input name="amount" type="number"></input>
+        <label htmlFor="amount">Paragraphs?</label>
+        <input name="amount" id="amount" type="number"></input>
         <button onClick = { handleChange }>Submit</button>
       </form>
       <header className="App-header">
