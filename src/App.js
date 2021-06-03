@@ -29,8 +29,13 @@ function App() {
         onSubmit = { handleSubmit }
       >
         <label htmlFor="amount">Paragraphs?</label>
-        <input name="amount" id="amount" type="number"></input>
-        <button onClick = { handleChange }>Submit</button>
+        <input 
+        name="amount" id="amount" type="number"
+        //e sets event 
+        onChange = { (e) => setCount(e.target.value )}
+        
+        ></input>
+        <button>Submit</button>
       </form>
       <header className="App-header">
         <p>
