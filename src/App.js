@@ -30,9 +30,10 @@ function App() {
       >
         <label htmlFor="amount">Paragraphs?</label>
         <input 
-        name="amount" id="amount" type="number"
+        name="amount" id="amount" type="number" min = "0" max = "10"
+        // input controlled - by setCount changing count to e.target.value
         //e sets event 
-        onChange = { (e) => setCount(e.target.value )}
+        onChange = { (e) => setCount(e.target.value ) }
         
         ></input>
         <button>Submit</button>
