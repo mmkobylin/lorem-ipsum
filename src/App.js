@@ -14,22 +14,38 @@ function App() {
     // stops the reloading of the webpage
     e.preventDefault();
     // sets up text
-    // cries that data is an object"
-    console.log(typeof(text));
-    setText(data);
+    // slices the amount of paragraphs in the data. 
+
+
+
+    if (data.length < count ) { 
+      // how many times we need the data???
+
+      function duplicateElements(data, count) {
+        var multiplier = Math.ceil(count/data.length);
+
+        return data.concat(Array(multiplier).fill(data))
+      }
+
+      setText(duplicateElements(data, count).slice(0, count));
+
+    } else {
+      setText(data.slice( 0, count));
+
+    }
   }
  
   return (
     <div className="section-center">
       <h3>Hipster food lorem ipsum.</h3>
 
-      <p>{count}</p>
       <form
+        // making sure that the submitting form is an option
         onSubmit = { handleSubmit }
       >
         <label htmlFor="amount">Paragraphs?</label>
         <input 
-        name="amount" id="amount" type="number" min = "0" max = "10"
+        name="amount" id="amount" type="number" min = "0"
         // input controlled - by setCount changing count to e.target.value
         //e sets event 
         onChange = { (e) => setCount( e.target.value ) }
@@ -40,7 +56,7 @@ function App() {
       </form>
 
       <article className="lorem-text">
-        { text.map ( (item, index) => {
+        { text.map ( ( item, index ) => {
           return <p key = { index } > { item } </p>
 
         })}
