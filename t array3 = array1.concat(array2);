@@ -1,0 +1,23 @@
+[33mcommit d85f8a380bf04e3be63ef7305ca8b89b84f7962a[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: mmkobylin <mmkobylin@gmail.com>
+Date:   Sat Jun 5 13:20:52 2021 +0100
+
+    duplicate elements does NOT duplicate them- it is just adding enitre thing as one '
+
+[33mcommit 3f223952ecf4c884995e5c4a4855703203fc9053[m
+Author: mmkobylin <mmkobylin@gmail.com>
+Date:   Sat Jun 5 12:06:52 2021 +0100
+
+    now multiple paragraphs displaying on submit
+
+[33mcommit ddd6dc0edc6c9ef60c9d7aeb66950cf1b100bbae[m
+Author: mmkobylin <mmkobylin@gmail.com>
+Date:   Sat Jun 5 11:43:16 2021 +0100
+
+    data now displays using map function
+
+[33mcommit 8ea5829df36a8310240d8a65bbae8f25a1ea24ad[m
+Author: mmkobylin <mmkobylin@gmail.com>
+Date:   Fri Jun 4 21:10:35 2021 +0100
+
+    data file created amd added

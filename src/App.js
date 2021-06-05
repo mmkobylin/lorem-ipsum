@@ -21,13 +21,11 @@ function App() {
     if (data.length < count ) { 
       // how many times we need the data???
 
-      function duplicateElements(data, count) {
-        var multiplier = Math.ceil(count/data.length);
+      const multiplier = Math.ceil(count/data.length);
 
-        return data.concat(Array(multiplier).fill(data))
-      }
+      const dataPlus = data.concat(data);
 
-      setText(duplicateElements(data, count).slice(0, count));
+      setText(dataPlus.slice(0, count));
 
     } else {
       setText(data.slice( 0, count));
