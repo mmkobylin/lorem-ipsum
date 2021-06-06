@@ -35,10 +35,10 @@ function App() {
   }
  
   return (
-    <>
+    <>      
+      <h3>Hipster food lorem ipsum.</h3>
+
       <section className="section-center">
-      
-        <h3>Hipster food lorem ipsum.</h3>
 
         <form
           // making sure that the submitting form is an option
@@ -52,6 +52,7 @@ function App() {
           onChange = { (e) => setCount( e.target.value ) }
           
           ></input>
+          <br></br>
           {/* submit button */}
           <button type ="submit" className="btn">generate</button>
         </form>

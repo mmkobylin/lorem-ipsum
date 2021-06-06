@@ -1,6 +1,7 @@
 *, *::after, *::before {
   margin: 0;
   padding: 0;
+  color: #2D3142;
 }
 
 
@@ -14,8 +15,8 @@ body {
 }
 
 article {
-  background-color: aquamarine;
-  padding: 2vw;
+  background-color: #70FFEC;
+  margin: 5vw 0;
   text-align: justify;
 }
 
@@ -25,8 +26,10 @@ article p {
 }
 
 h3 {
-  background-color: aliceblue;
+  background-color: #FFF2F1;
   padding: 3rem;
+  margin-bottom: 4vw;
+  text-align: center;
 }
 
 code {
@@ -34,15 +37,29 @@ code {
     monospace;
 }
 
-.section-center {
-  text-align: center;
-  margin: 2vw;
-}
-
-/* form {
-
+/* .section-center {
 } */
 
+form {
+  text-align: center;
+}
+
+/* all children of form */
+form * {
+  margin: 4vw;
+}
+
+button {
+
+  padding: 2vw;
+  text-transform: uppercase;
+  background-color: #70FFEC;
+}
+
 article {
-  background-color: aquamarine;
+  background-color: #70FFEC;
+}
+
+@media screen  {
+  
 }
