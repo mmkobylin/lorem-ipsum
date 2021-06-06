@@ -18,6 +18,7 @@ function App() {
 
 
 
+    // this part defines the amount of paragraphs.
     if (data.length < count ) { 
       // how many times we need the data???
 
@@ -34,33 +35,36 @@ function App() {
   }
  
   return (
-    <div className="section-center">
-      <h3>Hipster food lorem ipsum.</h3>
+    <>
+      <section className="section-center">
+      
+        <h3>Hipster food lorem ipsum.</h3>
 
-      <form
-        // making sure that the submitting form is an option
-        onSubmit = { handleSubmit }
-      >
-        <label htmlFor="amount">Paragraphs?</label>
-        <input 
-        name="amount" id="amount" type="number" min = "0"
-        // input controlled - by setCount changing count to e.target.value
-        //e sets event 
-        onChange = { (e) => setCount( e.target.value ) }
-        
-        ></input>
-        {/* submit button */}
-        <button type ="submit" className="btn">generate</button>
-      </form>
+        <form
+          // making sure that the submitting form is an option
+          onSubmit = { handleSubmit }
+        >
+          <label htmlFor="amount">Paragraphs?</label>
+          <input 
+          name="amount" id="amount" type="number" min = "0"
+          // input controlled - by setCount changing count to e.target.value
+          //e sets event 
+          onChange = { (e) => setCount( e.target.value ) }
+          
+          ></input>
+          {/* submit button */}
+          <button type ="submit" className="btn">generate</button>
+        </form>
+    </section>
 
-      <article className="lorem-text">
-        { text.map ( ( item, index ) => {
-          return <p key = { index } > { item } </p>
+    <article className="lorem-text">
+      { text.map ( ( item, index ) => {
+        return <p key = { index } > { item } </p>
 
-        })}
-      </article>
+      })}
+    </article>
 
-    </div>
+    </>
   );
 }
 
