@@ -39,28 +39,63 @@ function App() {
       const words = data[i].trim().split(" ");
 
       // add randomisation
-      for (var j = 0; j < words.length; j++) {
-        // displays words correctly
+      for (var j = 3; j < words.length; j++) {
+        
+        function randomise() {
+            // checking each item in words array except last one,
+            var lastChar = words[j][words[j].length - 1];
 
-        if (Math.random() > 0.4 ) {
-          // last caracter of previous word
-          var lastChar = words[j][words[j].length - 1];
+            var foodRandom = ['chilli', 'cheesecake', 'chai', 'latte', 'sorbet',  'wrap', 'falafel', 'hallumi', 'tapas', 'samosas', 'couscous', 'pakora', 'spicy', 'hummus', 'cheakpeas'];
 
-          var foodRandom = ['chilli', 'cheesecake', 'chai', 'latte', 'sorbet',  'wrap', 'falafel', 'hallumi', 'tapas', 'samosas', 'couscous', 'pakora', 'spicy', 'hummus', 'cheakpeas'];
+            // randomising variable
+            var random = foodRandom[Math.floor(Math.random()*foodRandom.length)];
 
-          var random = foodRandom[Math.floor(Math.random()*foodRandom.length)];
+            // sorting punctuation
+            if (lastChar == ',' ) {
+                // items in array randomiezed and floored
+                words[j] = random + ',' ;
+            }
+            else if  (lastChar == '.' ) {
+                words[j] = random + '.';
+            }
 
-          if (lastChar = ',' ) {
-            words[j] = random + ',';
-          } 
-          else if  (lastChar = '.' ) {
-            words[j] = random + '.';
-
-          } else {
-            words[j] = random;
-          };
+            else {
+                words[j] = random;
+            }
         }
-      }
+    
+        // sorting capitals
+        function capitals() {
+            if (words[j - 1][words[j-1].length - 1] == '.' ) {
+                // capitalize first letter //slice first letter of the word and add rest
+                words[j] = words[j].charAt(0).toUpperCase() + words[j].slice(1);
+            }
+        }
+        
+        function duplication() {  
+       
+            // using slice as it has to ignore dots and capitals.
+            if (words[j].slice(1,3) == words[j - 1].slice(1,3) ) {
+
+                randomise();
+
+            }
+        }        
+
+        // check for each word;
+        if (Math.random() < 0.5 ) {
+
+            randomise();
+
+        }
+
+        // check for duplicates, then changes to capitals;
+
+        duplication()
+
+        capitals();
+    } 
+
       setWords(words);
       }
   }
