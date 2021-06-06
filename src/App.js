@@ -46,7 +46,7 @@ function App() {
         >
           <label htmlFor="amount">Paragraphs?</label>
           <input 
-          name="amount" id="amount" type="number" min = "0"
+          name="amount" id="amount" type="number" min = "1"
           // input controlled - by setCount changing count to e.target.value
           //e sets event 
           onChange = { (e) => setCount( e.target.value ) }
@@ -54,7 +54,13 @@ function App() {
           ></input>
           <br></br>
           {/* submit button */}
-          <button type ="submit" className="btn">generate</button>
+          <button 
+            // 
+            disabled = { !count }  
+            // changing the button cursor depending if the count is empty
+            style = { !count ? { cursor: 'not-allowed' } : { cursor: 'pointer'} }
+            type ="submit" 
+            className="btn">generate</button>
         </form>
     </section>
 
