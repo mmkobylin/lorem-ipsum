@@ -90,13 +90,13 @@ function App() {
         }
 
         // check for duplicates, then changes to capitals;
-
         duplication()
 
         capitals();
-    } 
 
-      setWords(words);
+      }
+      // displays as words ( sentences )
+      setWords(words.join(' ')); 
       }
   }
  
