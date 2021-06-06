@@ -10,19 +10,16 @@ function App() {
   // empty OBJECT for some fucking reason
   const [text, setText] = useState([]);
 
+  const [words, setWords] = useState(data)
+
   let handleSubmit = (e) => {
     // stops the reloading of the webpage
     e.preventDefault();
-    // sets up text
-    // slices the amount of paragraphs in the data. 
-
-
 
     // this part defines the amount of paragraphs.
     if (data.length < count ) { 
       // how many times we need the data???
-
-      const multiplier = Math.ceil(count/data.length);
+      // const multiplier = Math.ceil(count/data.length);
 
       const dataPlus = data.concat(data);
 
@@ -33,10 +30,32 @@ function App() {
 
     }
   }
+
+  let handleClick = () => {
+    // getting the data, iterating through each object.
+    for (var i = 0; i < data.length; i++) {
+
+      //splitting each item data[i] into an array
+      const words = data[i].trim().split(" ");
+
+      // add randomisation
+      for (var j = 2; j < words.length; j++) {
+        // displays words correctly
+        if (Math.random() > 0.5 ) {
+          words[j] = 'hallumi';
+        }
+      }
+
+      setWords(words);
+      }
+  }
  
   return (
     <>      
       <h3>Hipster food lorem ipsum.</h3>
+
+      {/* displays data */}
+      <p>{ words }</p>
 
       <section className="section-center">
 
@@ -60,7 +79,13 @@ function App() {
             // changing the button cursor depending if the count is empty
             style = { !count ? { cursor: 'not-allowed' } : { cursor: 'pointer'} }
             type ="submit" 
-            className="btn">generate</button>
+            className="btn">Lorem</button>
+          <button 
+          disabled = { !count }  
+          // changing the button cursor depending if the count is empty
+          style = { !count ? { cursor: 'not-allowed' } : { cursor: 'pointer'} }
+          onClick = { () => handleClick() } 
+          >Hipsterise it</button>
         </form>
     </section>
 
