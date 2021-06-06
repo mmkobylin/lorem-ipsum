@@ -41,8 +41,14 @@ function App() {
       // add randomisation
       for (var j = 2; j < words.length; j++) {
         // displays words correctly
+
         if (Math.random() > 0.5 ) {
-          words[j] = 'hallumi';
+          // changes the 
+          var foodRandom = ['chilli', 'cheesecake', 'chai', 'latte', 'sorbet',  'wrap', 'falafel', 'hallumi', 'tapas', 'samosas', 'couscous', 'pakora', 'spicy', 'hummus', 'cheakpeas'];
+
+          var random = foodRandom[Math.floor(Math.random()*foodRandom.length)];
+
+          words[j] = random;
         }
       }
 
