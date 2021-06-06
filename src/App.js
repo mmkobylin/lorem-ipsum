@@ -10,7 +10,7 @@ function App() {
   // empty OBJECT for some fucking reason
   const [text, setText] = useState([]);
 
-  const [words, setWords] = useState(data)
+  const [words, setWords] = useState([data])
 
   let handleSubmit = (e) => {
     // stops the reloading of the webpage
@@ -39,19 +39,28 @@ function App() {
       const words = data[i].trim().split(" ");
 
       // add randomisation
-      for (var j = 2; j < words.length; j++) {
+      for (var j = 0; j < words.length; j++) {
         // displays words correctly
 
-        if (Math.random() > 0.5 ) {
-          // changes the 
+        if (Math.random() > 0.4 ) {
+          // last caracter of previous word
+          var lastChar = words[j][words[j].length - 1];
+
           var foodRandom = ['chilli', 'cheesecake', 'chai', 'latte', 'sorbet',  'wrap', 'falafel', 'hallumi', 'tapas', 'samosas', 'couscous', 'pakora', 'spicy', 'hummus', 'cheakpeas'];
 
           var random = foodRandom[Math.floor(Math.random()*foodRandom.length)];
 
-          words[j] = random;
+          if (lastChar = ',' ) {
+            words[j] = random + ',';
+          } 
+          else if  (lastChar = '.' ) {
+            words[j] = random + '.';
+
+          } else {
+            words[j] = random;
+          };
         }
       }
-
       setWords(words);
       }
   }
@@ -61,7 +70,8 @@ function App() {
       <h3>Hipster food lorem ipsum.</h3>
 
       {/* displays data */}
-      <p>{ words }</p>
+
+      <p>{words}</p>
 
       <section className="section-center">
 
