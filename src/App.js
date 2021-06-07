@@ -65,27 +65,22 @@ function App() {
       
           // sorting capitals
           function capitals() {
-              if (words[j - 1][words[j-1].length - 1] === '.' ) {
-                  // capitalize first letter //slice first letter of the word and add rest
-                  words[j] = words[j].charAt(0).toUpperCase() + words[j].slice(1);
-              }
+            if (words[j - 1][words[j-1].length - 1] === '.' ) {
+              // capitalize first letter //slice first letter of the word and add rest
+              words[j] = words[j].charAt(0).toUpperCase() + words[j].slice(1);
+            }
           }
           
-          function duplication() {  
-         
-              // using slice as it has to ignore dots and capitals.
-              if (words[j].slice(1,3) === words[j - 1].slice(1,3) ) {
-  
-                  randomise();
-  
-              }
+          function duplication() {
+            // using slice as it has to ignore dots and capitals.
+            if (words[j].slice(1,3) === words[j - 1].slice(1,3) ) {
+              randomise();
+            }
           }        
   
           // check for each word;
           if (Math.random() < 0.5 ) {
-  
-              randomise();
-  
+            randomise();
           }
   
           // check for duplicates, then changes to capitals;
