@@ -4,12 +4,14 @@ import data from '../data';
 // const declared
 const Form = () => { 
 
-    const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0);
 
-    // empty array
-    const [ text, setText ] = useState([])
+  // empty array
+  const [ text, setText ] = useState([])
 
-  
+  const [ words, setWords ] = useState(text.map )
+
+
   let handleSubmit = (e) => {
     // stops the reloading of the webpage
     e.preventDefault();
@@ -25,7 +27,6 @@ const Form = () => {
 
   let handleChange = (e) => {
     setCount( e.target.value);
-    console.log(text);
   }
 
     return (
@@ -57,58 +58,58 @@ const Form = () => {
         </form>
       </section>
       <article className="lorem-text">
-    { text.map ( ( item, index ) => {
+        { text.map ( ( item, index ) => {
 
-      var words = item.trim().split(" ");
+          var words = item.trim().split(" ");
 
-      for (var i = 3; i < words.length; i++) {
+          for (var i = 3; i < words.length; i++) {
 
-      function randomise() {
-        // checking each item in words array except last one,
-        var lastChar = words[i][words[i].length - 1];
+          function randomise() {
+            // checking each item in words array except last one,
+            var lastChar = words[i][words[i].length - 1];
 
-        var foodRandom = ['chilli', 'cheesecake', 'chai', 'latte', 'sorbet',  'wrap', 'falafel', 'hallumi', 'tapas', 'samosas', 'couscous', 'pakora', 'spicy', 'hummus', 'cheakpeas'];
+            var foodRandom = ['chilli', 'cheesecake', 'chai', 'latte', 'sorbet',  'wrap', 'falafel', 'hallumi', 'tapas', 'samosas', 'couscous', 'pakora', 'spicy', 'hummus', 'cheakpeas'];
 
-        // randomising variable
-        var random = foodRandom[Math.floor(Math.random()*foodRandom.length)];
+            // randomising variable
+            var random = foodRandom[Math.floor(Math.random()*foodRandom.length)];
 
-        // sorting punctuation
-        if (lastChar == ',' ) {
-          // items in array randomiezed and floored
-          words[i] = random + ',' ;
-        }
-        else if  (lastChar == '.' ) {
-          words[i] = random + '.';
-        }
-        else {
-          words[i] = random;
-        }
-      }
+            // sorting punctuation
+            if (lastChar == ',' ) {
+              // items in array randomiezed and floored
+              words[i] = random + ',' ;
+            }
+            else if  (lastChar == '.' ) {
+              words[i] = random + '.';
+            }
+            else {
+              words[i] = random;
+            }
+          }
 
-      // sorting capitals
-      function capitals() {
-        if (words[i - 1][words[i-1].length - 1] == '.' ) {
-          // capitalize first letter //slice first letter of the word and add rest
-          words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
-        }
-      }
-  
-      function duplication() {
-      // using slice as it has to ignore dots and capitals.
-        if (words[i].slice(1,3) == words[i - 1].slice(1,3) ) {
-          randomise();
-        }
-      }        
+          // sorting capitals
+          function capitals() {
+            if (words[i - 1][words[i-1].length - 1] == '.' ) {
+              // capitalize first letter //slice first letter of the word and add rest
+              words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+            }
+          }
+      
+          function duplication() {
+          // using slice as it has to ignore dots and capitals.
+            if (words[i].slice(1,3) == words[i - 1].slice(1,3) ) {
+              randomise();
+            }
+          }        
 
-      // check for each word;
-      if (Math.random() < 0.5 ) {
-        randomise();
-      }
+          // check for each word;
+          if (Math.random() < 0.5 ) {
+            randomise();
+          }
 
-    // check for duplicates, then changes to capitals;
-    duplication()
-    capitals()
-  }     
+        // check for duplicates, then changes to capitals;
+        duplication()
+        capitals()
+      }     
     return <p key = { index } > { words.join( ' ' )} </p>
     })}
     </article>
