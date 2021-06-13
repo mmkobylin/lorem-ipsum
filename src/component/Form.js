@@ -21,12 +21,17 @@ const Form = () => {
       // how many times we need the data???
       setText((data.concat(data)).slice(0, count));
     } else {
-      const info = ((data.slice( 0, count)).map( (value, index) => <p key = {index} > { value } </p>) );
+      const info = ((data.slice( 0, count)).map( (value, index) => {
 
+        for ( var i = 0; i < index; i++ ) {
+
+          console.log(value.length);
+        }
+      } ) );
+    
       setText(info)
 
     }
-    console.log(text.length)
   }
 
   let handleChange = (e) => {
