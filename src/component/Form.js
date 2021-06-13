@@ -25,7 +25,7 @@ const Form = () => {
 
         for ( var i = 0; i < index; i++ ) {
 
-          console.log(value.length);
+          console.log(value);
         }
       } ) );
     
