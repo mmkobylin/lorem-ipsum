@@ -24,7 +24,7 @@ const Form = () => {
   }
 
   let handleChange = (e) => {
-    setCount( count = e.target.value);
+    setCount( e.target.value);
     console.log(text);
   }
 
