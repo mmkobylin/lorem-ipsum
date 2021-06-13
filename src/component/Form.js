@@ -17,12 +17,15 @@ const Form = () => {
     // this part defines the amount of paragraphs.
     if (data.length < count ) { 
       // how many times we need the data???
-      // const multiplier = Math.ceil(count/data.length);
       setText((data.concat(data)).slice(0, count));
-
     } else {
       setText(data.slice( 0, count));
     }
+  }
+
+  let handleChange = (e) => {
+    setCount( count = e.target.value);
+    console.log(text);
   }
 
     return (
@@ -37,11 +40,10 @@ const Form = () => {
           name="amount" id="amount" type="number" min = "1"
           // input controlled - by setCount changing count to e.target.value
           //e sets event 
-          onChange = { (e) => setCount( e.target.value ) }
+          onChange = { handleChange }
           
           ></input>
           <br></br>
-          {/* submit button */}
           <button 
             // 
             disabled = { !count }  
@@ -107,8 +109,8 @@ const Form = () => {
     duplication()
     capitals()
   }     
-return <p key = { index } > { words.join( ' ' )} </p>
-})}
+    return <p key = { index } > { words.join( ' ' )} </p>
+    })}
     </article>
       </>
     )
