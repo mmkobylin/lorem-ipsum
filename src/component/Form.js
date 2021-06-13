@@ -21,14 +21,12 @@ const Form = () => {
       // how many times we need the data???
       setText((data.concat(data)).slice(0, count));
     } else {
-      // const info = data.slice( 0, count).map( (value, index) => { value } ) ;
+      const info = ((data.slice( 0, count)).map( (value, index) => <p key = {index} > { value } </p>) );
 
-      console.log((data.slice( 0, count)).map( (value, index) => <p key = {index} > { value } </p>) );
-
-      // setText(text)
+      setText(info)
 
     }
-    console.log(text)
+    console.log(text.length)
   }
 
   let handleChange = (e) => {
@@ -37,6 +35,7 @@ const Form = () => {
 
     return (
       <>
+      <a>{ text }</a>
         <section className="section-center">
             <form
             // making sure that the submitting form is an option
