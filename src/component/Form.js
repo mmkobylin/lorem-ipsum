@@ -6,12 +6,27 @@ const Form = () => {
 
     const [count, setCount] = useState(0);
 
-    let handleSubmit = (e) => {
-        // stops the reloading of the webpage
-        e.preventDefault();
+    // empty array
+    const [ text, setText ] = useState([])
+
+  
+  let handleSubmit = (e) => {
+    // stops the reloading of the webpage
+    e.preventDefault();
+    
+    // this part defines the amount of paragraphs.
+    if (data.length < count ) { 
+      // how many times we need the data???
+      // const multiplier = Math.ceil(count/data.length);
+      setText((data.concat(data)).slice(0, count));
+
+    } else {
+      setText(data.slice( 0, count));
     }
+  }
 
     return (
+      <>
         <section className="section-center">
             <form
             // making sure that the submitting form is an option
@@ -32,12 +47,20 @@ const Form = () => {
             disabled = { !count }  
             // changing the button cursor depending if the count is empty
             style = { !count ? { cursor: 'not-allowed' } : { cursor: 'pointer'} }
-            type ="submit" 
+            type ="submit"
+
             className="btn"
           >Lorem
           </button>
         </form>
-    </section>
+      </section>
+      <article className="lorem-text">
+        { text.map( ( index, value ) => {
+          <p key = { index }>{ value } </p>
+        } ) 
+        }
+      </article>
+      </>
     )
 }
 

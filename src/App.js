@@ -15,7 +15,7 @@ function App() {
     <>      
       <Header/>
       <Form/>
-      <Article/>
+      {/* <Article/> */}
 
     </>
   );
