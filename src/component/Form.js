@@ -23,9 +23,12 @@ const Form = () => {
     } else {
       const info = ((data.slice( 0, count)).map( (value, index) => {
 
+        // makes it words
+        setWords(value.trim().split(" "));
+
         for ( var i = 0; i < index; i++ ) {
 
-          console.log(value);
+          console.log(words[i]);
         }
       } ) );
     
@@ -40,7 +43,7 @@ const Form = () => {
 
     return (
       <>
-      <a>{ text }</a>
+      <p>{ words }</p>
         <section className="section-center">
             <form
             // making sure that the submitting form is an option
