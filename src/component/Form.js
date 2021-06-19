@@ -31,7 +31,16 @@ const Form = () => {
         console.log(text[i]);
 
         for ( let j = 3; j < text[i].length; j++ ) {
-          text[i][j] = 'hallumi';
+
+          function randomise() {
+            text[i][j] = 'hallumi';
+          }
+
+          // check for each word;
+          if (Math.random() < 0.5 ) {
+            randomise();
+          }
+
           console.log(text[i])
         };
       }
