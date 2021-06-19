@@ -31,7 +31,8 @@ const Form = () => {
         console.log(text[i]);
 
         for ( let j = 3; j < text[i].length; j++ ) {
-          console.log(text[i][j])
+          text[i][j] = 'hallumi';
+          console.log(text[i])
         };
       }
     }
