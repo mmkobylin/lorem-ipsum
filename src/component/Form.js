@@ -33,22 +33,36 @@ const Form = () => {
         for ( let j = 3; j < text[i].length; j++ ) {
 
           function randomise() {
-            text[i][j] = 'hallumi';
-          }
+            // checking each item in words array except last one,
+            var lastChar = text[i][j][text[i][j].length - 1];
 
+            var foodRandom = ['chilli', 'cheesecake', 'chai', 'latte', 'sorbet',  'wrap', 'falafel', 'hallumi', 'tapas', 'samosas', 'couscous', 'pakora', 'spicy', 'hummus', 'cheakpeas'];
+
+            // randomising variable
+            var random = foodRandom[Math.floor(Math.random()*foodRandom.length)];
+
+            // sorting punctuation
+            if (lastChar == ',' ) {
+                // items in array randomiezed and floored
+                text[i][j] = random + ',' ;
+            }
+            else if  (lastChar == '.' ) {
+                text[i][j] = random + '.';
+            }
+            else {
+                text[i][j] = random;
+            }
+          }
           // check for each word;
           if (Math.random() < 0.5 ) {
             randomise();
           }
 
-          console.log(text[i])
+          console.log(text)
         };
       }
     }
   }
-  // {text.map((paragraph, index) => (
-  //   <p className = 'break' key={index}>{paragraph}</p>
-  // ))}
 
   let handleChange = (e) => {
     setCount( e.target.value);
