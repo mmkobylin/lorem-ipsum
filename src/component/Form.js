@@ -57,9 +57,8 @@ const Form = () => {
           if (Math.random() < 0.5 ) {
             randomise();
           }
-
-          console.log(text)
         };
+        setWords(text);
       }
     }
   }
@@ -70,7 +69,8 @@ const Form = () => {
 
     return (
       <>
-        <p>{words}</p>
+        <p> { text } </p>
+        <p> { words } </p>
         <section className="section-center">
             <form
             // making sure that the submitting form is an option
