@@ -21,18 +21,10 @@ const Form = () => {
       // how many times we need the data???
       setText((data.concat(data)).slice(0, count));
     } else {
-      const info = ((data.slice( 0, count)).map( (value, index) => {
-
-        // makes it words
-        setWords(value.trim().split(" "));
-
-        for ( var i = 0; i < index; i++ ) {
-
-          console.log(words[i]);
-        }
-      } ) );
     
-      setText(info)
+      setText(data.slice(0, count ))
+      // check if its an array
+      console.log(text.length);
 
     }
   }
@@ -43,7 +35,6 @@ const Form = () => {
 
     return (
       <>
-      <p>{ words }</p>
         <section className="section-center">
             <form
             // making sure that the submitting form is an option
@@ -71,7 +62,9 @@ const Form = () => {
         </form>
       </section>
       <article className="lorem-text">
-        { words ? words : null }
+        {text.map((paragraph, index) => (
+          <p className = 'break' key={index}>{paragraph}</p>
+        ))}
     </article>
       </>
     )

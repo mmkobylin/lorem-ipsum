@@ -4,6 +4,10 @@
   color: #2D3142;
 }
 
+.break {
+  padding: 1%;
+  text-align: justify;
+}
 
 body {
   margin: 0;
