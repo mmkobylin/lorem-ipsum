@@ -23,11 +23,22 @@ const Form = () => {
     } else {
     
       setText(data.slice(0, count ))
-      // check if its an array
-      console.log(text.length);
 
+      for (let i = 0; i < text.length; i++) {  
+        // displaying FOR EACH ITEM, whoo!
+
+        text[i] = text[i].split(/\s/g);
+        console.log(text[i]);
+
+        for ( let j = 3; j < text[i].length; j++ ) {
+          console.log(text[i][j])
+        };
+      }
     }
   }
+  // {text.map((paragraph, index) => (
+  //   <p className = 'break' key={index}>{paragraph}</p>
+  // ))}
 
   let handleChange = (e) => {
     setCount( e.target.value);
@@ -35,6 +46,7 @@ const Form = () => {
 
     return (
       <>
+        <p>{words}</p>
         <section className="section-center">
             <form
             // making sure that the submitting form is an option
