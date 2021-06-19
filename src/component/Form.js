@@ -30,7 +30,7 @@ const Form = () => {
         text[i] = text[i].split(/\s/g);
         console.log(text[i]);
 
-        for ( let j = 3; j < text[i].length; j++ ) {
+        for ( let j = 0; j < text[i].length; j++ ) {
 
           function randomise() {
             // checking each item in words array except last one,
@@ -57,8 +57,8 @@ const Form = () => {
           if (Math.random() < 0.5 ) {
             randomise();
           }
+          setWords(text.join(' '));
         };
-        setWords(text);
       }
     }
   }
