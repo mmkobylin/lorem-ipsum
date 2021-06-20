@@ -111,7 +111,6 @@ const Form = () => {
           onChange = { handleChange }
           
           ></input>
-          <br></br>
           <button 
             // 
             disabled = { !count }  
