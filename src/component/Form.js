@@ -28,7 +28,6 @@ const Form = () => {
         // displaying FOR EACH ITEM, whoo!
 
         text[i] = text[i].split(/\s/g);
-        console.log(text[i]);
 
         for ( let j = 0; j < text[i].length; j++ ) {
 
@@ -53,11 +52,17 @@ const Form = () => {
                 text[i][j] = random;
             }
           }
+
           // check for each word;
           if (Math.random() < 0.5 ) {
             randomise();
           }
-          setWords(text.join(' '));
+
+          //joins the new item to array. bu no means perfect, but it seems to be working 
+          const paragraph = [];
+          paragraph.push(text.join(' '));
+          setWords(paragraph);
+          console.log(words.length)
         };
       }
     }
@@ -69,7 +74,6 @@ const Form = () => {
 
     return (
       <>
-        <p> { text } </p>
         <p> { words } </p>
         <section className="section-center">
             <form
