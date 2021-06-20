@@ -58,11 +58,14 @@ const Form = () => {
             randomise();
           }
 
+          // text[i] = text[i].join(' ');
+
           //joins the new item to array. bu no means perfect, but it seems to be working 
           const paragraph = [];
-          paragraph.push(text.join(' '));
+          // this is what makes the text from previous iteration join;
+          paragraph.push(text[i].join(' '));
           setWords(paragraph);
-          console.log(words.length)
+
         };
       }
     }
@@ -74,7 +77,9 @@ const Form = () => {
 
     return (
       <>
-        <p> { words } </p>
+        {words.map((paragraph, index) => (
+          <p className = 'break' key={index}>{paragraph}</p>
+        ))}
         <section className="section-center">
             <form
             // making sure that the submitting form is an option
