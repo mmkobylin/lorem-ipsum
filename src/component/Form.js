@@ -9,7 +9,6 @@ const Form = () => {
   // empty array
   const [ text, setText ] = useState([])
 
-
   //we gotta change info first, then slice it
   const [ words, setWords ] = useState(data)
 
@@ -26,7 +25,8 @@ const Form = () => {
       for (let i = 0; i < words.length; i++) {  
         // displaying FOR EACH ITEM, whoo!
 
-        const newWords = words.toString().split(/\s/g);
+        const newWords = words[i].toString().split(/\s/g);
+        console.log(newWords);
 
         for ( let j = 1; j < newWords.length - 1; j++ ) {
 
