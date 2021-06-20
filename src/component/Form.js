@@ -64,8 +64,8 @@ const Form = () => {
 
           function duplication() {
             // using slice as it has to ignore dots and capitals.
-            if (text[i][j].slice(1,3) == text[i][j - 1].slice(1,3) ) {
-                randomise();
+            if (text[i][j].slice(1,3) == text[i][j - 1].slice(1,3)) {
+              text[i][j] = 'smoothie';
             }
           }        
           // check for each word;
@@ -73,8 +73,8 @@ const Form = () => {
             randomise();
           }
 
-          capitals();
-          duplication();
+          capitals(duplication());
+          // duplication();
 
           //joins the new item to array. bu no means perfect, but it seems to be working 
           const paragraph = [];
