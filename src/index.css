@@ -1,5 +1,4 @@
 *, *::after, *::before {
-  margin: 0;
   padding: 0;
   color: #2D3142;
 }
@@ -38,8 +37,14 @@ button {
 }
 
 button:hover {
-background-color: #FFF2F1;
-font-weight: bold;
+  background-color: #FFF2F1;
+  font-weight: bold;
+}
+
+header {
+  -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+  background-color: #FFF2F1;
 }
 
 h2 {
@@ -47,14 +52,17 @@ h2 {
 }
 
 h3 {
-  background-color: #FFF2F1;
-  padding: 3rem;
-  margin-bottom: 4vw;
+  margin: 0;
+  padding: 11% 5%;
   text-align: center;
 }
 
 h4 {
   font-size: 0.9rem;
+}
+
+.info {
+  padding: 7% 5% 10% 5%;
 }
 
 .info * {
@@ -64,7 +72,7 @@ h4 {
 .info p {
   font-size: 0.9rem;
   text-align: justify;
-  padding: 1.3rem;
+  margin: 0;
 }
 
 code {
@@ -77,7 +85,11 @@ form input {
 }
 
 form {
+  padding: 5%;
   text-align: center;
+  background-color: #FFF2F1;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px -6px 22px 5px rgba(0,0,0,0.47); 
+  box-shadow: 0px 10px 13px -7px #000000, 5px -6px 22px 5px rgba(0,0,0,0.47);
 }
 
 /* all children of form */
@@ -85,7 +97,7 @@ form * {
   margin: 4vw;
 }
 
-
+/* 
 @media only screen and (min-width: 800px) and (max-width: 1199px) {
 
   article p {
@@ -103,7 +115,7 @@ form * {
   }
 
   h3 {
-    transform: scale(1.4);
+    transform: scale(1.5);
     height: 10vh;
     display: flex;
     align-items: center;
@@ -118,22 +130,21 @@ form * {
     text-align: center;
   }
 
-}
+} */
 
 @media only screen and (min-width: 1200px) {
-
 
   article {
     background-color: #70FFEC;
     margin: 3vw 0;
-    text-align: justify;
+    /* text-align: justify; */
   }
   
   article p {
     font-size: 2rem;
     font-family: 'Arial';
-    max-width: 80%;
-    padding: 1% 10%;
+    /* max-width: 80%; */
+    /* padding: 1% 10%; */
   }
 
   button {
@@ -143,7 +154,6 @@ form * {
   form {
     height: 20vh;
   }
-
   
   form * {
     margin: 1vw;;
@@ -153,7 +163,6 @@ form * {
   form * {
     margin: 2rem 1rem;
   }
-
 
   form label, form input {
     margin-top: 3rem;

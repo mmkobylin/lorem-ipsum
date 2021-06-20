@@ -95,9 +95,9 @@ const Form = () => {
 
     return (
       <>
-        {words.map((paragraph, index) => (
+        {/* {words.map((paragraph, index) => (
           <p className = 'break' key={index}>{paragraph}</p>
-        ))}
+        ))} */}
         <section className="section-center">
             <form
             // making sure that the submitting form is an option

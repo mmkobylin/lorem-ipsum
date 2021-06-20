@@ -2,9 +2,9 @@ import React from 'react'
 
 export function Header() {
     return (
-        <div>
+        <header>
             <h3>Hipster food lorem ipsum.</h3>    
-        </div>
+        </header>
     )
 }
 
