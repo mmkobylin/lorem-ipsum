@@ -9,8 +9,9 @@ const Form = () => {
   // empty array
   const [ text, setText ] = useState([])
 
-  const [ words, setWords ] = useState([])
 
+  //we gotta change info first, then slice it
+  const [ words, setWords ] = useState(data)
 
   let handleSubmit = (e) => {
     // stops the reloading of the webpage
@@ -22,21 +23,18 @@ const Form = () => {
       setText((data.concat(data)).slice(0, count));
     } else {
     
-      setText(data.slice(0, count ))
-
-      for (let i = 0; i < text.length; i++) {  
+      for (let i = 0; i < words.length; i++) {  
         // displaying FOR EACH ITEM, whoo!
 
-        text[i] = text[i].split(/\s/g);
+        const newWords = words.toString().split(/\s/g);
 
-        for ( let j = 1; j < text[i].length; j++ ) {
+        for ( let j = 1; j < newWords.length - 1; j++ ) {
 
           function randomise() {
-            // checking each item in words array except last one,
-            var lastChar = text[i][j][text[i][j].length - 1];
+            // checking each item in newWords array except last one,
+            var lastChar = newWords[j][newWords[j].length - 1];
 
-            var foodRandom = ['chilli', 'cheesecake']
-            //, 'chai', 'latte', 'sorbet',  'wrap', 'falafel', 'hallumi', 'tapas', 'samosas', 'couscous', 'pakora', 'spicy', 'hummus', 'cheakpeas'];
+            var foodRandom = ['chilli', 'cheesecake', 'chai', 'latte', 'sorbet',  'wrap', 'falafel', 'hallumi', 'tapas', 'samosas', 'couscous', 'pakora', 'spicy', 'hummus', 'cheakpeas'];
 
             // randomising variable
             var random = foodRandom[Math.floor(Math.random()*foodRandom.length)];
@@ -44,28 +42,28 @@ const Form = () => {
             // sorting punctuation
             if (lastChar == ',' ) {
                 // items in array randomiezed and floored
-                text[i][j] = random + ',' ;
+                newWords[j] = random + ',' ;
             }
             else if  (lastChar == '.' ) {
-                text[i][j] = random + '.';
+                newWords[j] = random + '.';
             }
             else {
-                text[i][j] = random;
+                newWords[j] = random;
             }
           }
 
           // sorting capitals
           function capitals() {
-            if (text[i][j-1][text[i][j-1].length - 1] == '.' ) {
+            if (newWords[j-1][newWords[j-1].length - 1] == '.' ) {
               // capitalize first letter //slice first letter of the word and add rest
-              text[i][j] = text[i][j].charAt(0).toUpperCase() + text[i][j].slice(1);
+              newWords[j] = newWords[j].charAt(0).toUpperCase() + newWords[j].slice(1);
             }
           }
 
           function duplication() {
             // using slice as it has to ignore dots and capitals.
-            if (text[i][j].slice(1,3) == text[i][j - 1].slice(1,3)) {
-              text[i][j] = 'smoothie';
+            if (newWords[j].slice(1,3) == newWords[j - 1].slice(1,3)) {
+              newWords[j] = 'smoothie';
             }
           }        
           // check for each word;
@@ -79,7 +77,7 @@ const Form = () => {
           //joins the new item to array. bu no means perfect, but it seems to be working 
           const paragraph = [];
           //creating spaces between words
-          paragraph.push(text[i].join(' '));
+          paragraph.push(newWords.join(' '));
 
           const entireText = [];
           entireText.push(paragraph);
