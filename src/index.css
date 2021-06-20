@@ -104,13 +104,14 @@ form * {
 @media only screen and (min-width: 700px) {
   button {
     /* remember background, no color */
-    background: linear-gradient(to left, blue 50%, red 50% );
-    background-size: 200%, 100%;
+    background: linear-gradient(45deg, #087E8B 50%, #7DE2D1 50% );
+    background-size: 300%, 100%;
     background-position: right bottom;
-    transition: all 2s ease;
+    transition: all 0.5s ease;
   }
   
   button:hover:enabled {
+    color: #FFF2F1;
     background-position: left bottom;
     background-position: left bottom
   }
