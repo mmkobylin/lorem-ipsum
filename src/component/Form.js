@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import data from '../data';
 
-// const declared
 const Form = () => { 
 
   const [count, setCount] = useState(0);
@@ -40,11 +39,11 @@ const Form = () => {
             var random = foodRandom[Math.floor(Math.random()*foodRandom.length)];
 
             // sorting punctuation
-            if (lastChar == ',' ) {
+            if (lastChar === ',' ) {
                 // items in array randomiezed and floored
                 newWords[j] = random + ',' ;
             }
-            else if  (lastChar == '.' ) {
+            else if  (lastChar === '.' ) {
                 newWords[j] = random + '.';
             }
             else {
@@ -54,7 +53,7 @@ const Form = () => {
 
           // sorting capitals
           function capitals() {
-            if (newWords[j-1][newWords[j-1].length - 1] == '.' ) {
+            if (newWords[j-1][newWords[j-1].length - 1] === '.' ) {
               // capitalize first letter //slice first letter of the word and add rest
               newWords[j] = newWords[j].charAt(0).toUpperCase() + newWords[j].slice(1);
             }
@@ -62,7 +61,7 @@ const Form = () => {
 
           function duplication() {
             // using slice as it has to ignore dots and capitals.
-            if (newWords[j].slice(1,3) == newWords[j - 1].slice(1,3)) {
+            if (newWords[j].slice(1,3) === newWords[j - 1].slice(1,3)) {
               newWords[j] = 'smoothie';
             }
           }        
@@ -85,6 +84,7 @@ const Form = () => {
           console.log(entireText.length)
 
         };
+        setText(words)
       }
     }
   }

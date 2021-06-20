@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import Form from './Form.js'; 
-import data from '../data';
-
 
 export class Article extends Component {
     render() {

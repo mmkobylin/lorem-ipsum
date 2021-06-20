@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react';
 import Form from './component/Form';
+import Info from './component/Info';
 import Header from './component/Header';
 
 function App() {
@@ -9,8 +10,8 @@ function App() {
   return (
     <>      
       <Header/>
+      <Info/>
       <Form/>
-      {/* <Article/> */}
 
     </>
   );
