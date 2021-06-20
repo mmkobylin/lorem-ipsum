@@ -71,19 +71,10 @@ const Form = () => {
           }
 
           capitals(duplication());
-          // duplication();
-
-          //joins the new item to array. bu no means perfect, but it seems to be working 
-          var paragraph = [];
-          //creating spaces between words
-          paragraph.push(newWords.join(' '));
-
-          setWords(paragraph);
-        };
-        var items = words[i];
-        var materials = [];
-        materials.push(items);
-        console.log(materials);
+          // all paragraphs, at least that
+          setText(newWords[i].slice(0, count));  
+        // displays all 5 in the thing, but it does it by iteration, not addition.
+        }
       }
     }
   }
@@ -124,9 +115,10 @@ const Form = () => {
         </form>
       </section>
       <article className="lorem-text">
-        {text.map((paragraph, index) => (
+        {text } 
+        {/* map((paragraph, index) => (
           <p className = 'break' key={index}>{paragraph}</p>
-        ))} 
+        ))}  */}
     </article>
       </>
     )
