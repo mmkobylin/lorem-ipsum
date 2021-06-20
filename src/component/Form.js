@@ -53,18 +53,30 @@ const Form = () => {
             }
           }
 
+          // sorting capitals
+          function capitals() {
+            // if (text[i - 1][text[i-1].length - 1] == '.' ) {
+                // capitalize first letter //slice first letter of the word and add rest
+              text[i][j] = text[i][j].charAt(0).toUpperCase() + text[i][j].slice(1);
+            }
+          
+      
+
           // check for each word;
           if (Math.random() < 0.5 ) {
             randomise();
           }
 
-          // text[i] = text[i].join(' ');
+          capitals();
 
           //joins the new item to array. bu no means perfect, but it seems to be working 
           const paragraph = [];
-          // this is what makes the text from previous iteration join;
+          //creating spaces between words
           paragraph.push(text[i].join(' '));
-          setWords(paragraph);
+
+          const entireText = [];
+          entireText.push(paragraph);
+          setWords(entireText);
 
         };
       }
