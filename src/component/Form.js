@@ -35,7 +35,8 @@ const Form = () => {
             // checking each item in words array except last one,
             var lastChar = text[i][j][text[i][j].length - 1];
 
-            var foodRandom = ['chilli', 'cheesecake', 'chai', 'latte', 'sorbet',  'wrap', 'falafel', 'hallumi', 'tapas', 'samosas', 'couscous', 'pakora', 'spicy', 'hummus', 'cheakpeas'];
+            var foodRandom = ['chilli', 'cheesecake']
+            //, 'chai', 'latte', 'sorbet',  'wrap', 'falafel', 'hallumi', 'tapas', 'samosas', 'couscous', 'pakora', 'spicy', 'hummus', 'cheakpeas'];
 
             // randomising variable
             var random = foodRandom[Math.floor(Math.random()*foodRandom.length)];
@@ -60,14 +61,20 @@ const Form = () => {
               text[i][j] = text[i][j].charAt(0).toUpperCase() + text[i][j].slice(1);
             }
           }
-      
 
+          function duplication() {
+            // using slice as it has to ignore dots and capitals.
+            if (text[i][j].slice(1,3) == text[i][j - 1].slice(1,3) ) {
+                randomise();
+            }
+          }        
           // check for each word;
           if (Math.random() < 0.5 ) {
             randomise();
           }
 
           capitals();
+          duplication();
 
           //joins the new item to array. bu no means perfect, but it seems to be working 
           const paragraph = [];
