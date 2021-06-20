@@ -19,13 +19,13 @@ const Form = () => {
     if (data.length < count ) { 
       // how many times we need the data???
       setText((data.concat(data)).slice(0, count));
+
     } else {
     
       for (let i = 0; i < words.length; i++) {  
         // displaying FOR EACH ITEM, whoo!
 
         const newWords = words[i].toString().split(/\s/g);
-        console.log(newWords);
 
         for ( let j = 1; j < newWords.length - 1; j++ ) {
 
@@ -74,17 +74,16 @@ const Form = () => {
           // duplication();
 
           //joins the new item to array. bu no means perfect, but it seems to be working 
-          const paragraph = [];
+          var paragraph = [];
           //creating spaces between words
           paragraph.push(newWords.join(' '));
 
-          const entireText = [];
-          // entireText = entireText.concat(paragraph);
-          setWords(entireText.concat(paragraph));
-          console.log(entireText.length)
-
+          setWords(paragraph);
         };
-        setText(words)
+        var items = words[i];
+        var materials = [];
+        materials.push(items);
+        console.log(materials);
       }
     }
   }
@@ -127,7 +126,7 @@ const Form = () => {
       <article className="lorem-text">
         {text.map((paragraph, index) => (
           <p className = 'break' key={index}>{paragraph}</p>
-        ))}
+        ))} 
     </article>
       </>
     )
