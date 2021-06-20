@@ -112,6 +112,7 @@ const Form = () => {
           
           ></input>
           <button 
+            className = 'change'
             // 
             disabled = { !count }  
             // changing the button cursor depending if the count is empty
