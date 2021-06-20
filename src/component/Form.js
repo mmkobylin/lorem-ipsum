@@ -29,7 +29,7 @@ const Form = () => {
 
         text[i] = text[i].split(/\s/g);
 
-        for ( let j = 0; j < text[i].length; j++ ) {
+        for ( let j = 1; j < text[i].length; j++ ) {
 
           function randomise() {
             // checking each item in words array except last one,
@@ -55,11 +55,11 @@ const Form = () => {
 
           // sorting capitals
           function capitals() {
-            // if (text[i - 1][text[i-1].length - 1] == '.' ) {
-                // capitalize first letter //slice first letter of the word and add rest
+            if (text[i][j-1][text[i][j-1].length - 1] == '.' ) {
+              // capitalize first letter //slice first letter of the word and add rest
               text[i][j] = text[i][j].charAt(0).toUpperCase() + text[i][j].slice(1);
             }
-          
+          }
       
 
           // check for each word;
