@@ -80,8 +80,9 @@ const Form = () => {
           paragraph.push(newWords.join(' '));
 
           const entireText = [];
-          entireText.push(paragraph);
-          setWords(entireText);
+          // entireText = entireText.concat(paragraph);
+          setWords(entireText.concat(paragraph));
+          console.log(entireText.length)
 
         };
       }
