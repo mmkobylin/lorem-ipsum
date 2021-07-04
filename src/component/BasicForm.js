@@ -2,25 +2,31 @@ import React, { useState } from 'react'
 
 const BasicForm = () => {
 
-    const [count, setCount] = useState(0);
+    const [counter, setCounter] = useState(0);
 
     const [ text, setText] = useState([]);
 
-    let handleSubmit = (e, array) => {
+    let handleSubmit = (e) => {
         // stops the reloading of the webpage
         e.preventDefault();
+        console.log(counter);
         
         // this part defines the amount of paragraphs.
-        if (array.length < count ) { 
-          // how many times we need the array???
-          setText((array.concat(array)).slice(0, count));
-
-        }
+        // if (array.length < count ) { 
+        //     how many times we need the array???
+        //     setText((array.concat(array)).slice(0, count));
+        // }
     }
 
     let handleChange = (e) => {
-        setCount( e.target.value);
+        setCounter( e.target.value);
     }
+
+    // plus and minus! cause normal way of using things does not work in firefox lol
+    let incrementCounter = () => setCounter(counter + 1);
+    let decrementCounter = () => setCounter(counter - 1);
+    // dealing with negative values
+    if(counter<=0) { decrementCounter = () => setCounter(1); };
 
     return (
         <section className="section-center">
@@ -29,20 +35,23 @@ const BasicForm = () => {
             onSubmit = { handleSubmit }
             >
                 <label htmlFor="amount">Paragraphs?</label>
-                <input 
-                    name="amount" id="amount" type="number" min = "1"
-                    // input controlled - by setCount changing count to e.target.value
-                    //e sets event 
+                <button onClick={incrementCounter}
+                style = { { cursor: 'pointer'} }
+                >+</button>
+                <p //e sets event 
                     onChange = { handleChange }
-                ></input>
+                > { counter } </p>
                 <button 
-                    className = 'change' 
-                    disabled = { !count }  
-                    // changing the button cursor depending if the count is empty
-                    style = { !count ? { cursor: 'not-allowed' } : { cursor: 'pointer'} }
+                style = { !counter ? { cursor: 'not-allowed' } : { cursor: 'pointer'} }
+                onClick={decrementCounter}>-</button>
+
+                <button 
+                    className = 'change btn' 
+                    disabled = { !counter  }  
+                    // changing the button cursor depending if the counters empty
+                    style = { !counter ? { cursor: 'not-allowed' } : { cursor: 'pointer'} }
                     type ="submit"
-                    className="btn"
-                >Lorem
+                >Submit
                 </button>
             </form>
       </section>

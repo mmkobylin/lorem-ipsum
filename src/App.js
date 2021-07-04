@@ -20,10 +20,6 @@ function App() {
       <Header/>
       <BasicForm/>
       <Paragraph/>
-
-      {/* <Info/>
-      <Form/> */}
-
     </>
   );
 }

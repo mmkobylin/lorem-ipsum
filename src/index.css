@@ -183,15 +183,15 @@ form * {
   form {
     padding: 3%;
   }
-  
+/*   
   form label, form input {
     font-weight: bold;
     margin-top: 3rem;
-  }
+  } */
 
-  form input {
+  /* form input {
     max-width: 4rem;
-  }
+  } */
 
   form * {
     margin: 1vw;;
@@ -200,9 +200,9 @@ form * {
     padding: 15px;
   }
 
-  form label, form input {
+  /* form label, form input {
     margin-top: 3rem;
-  }
+  } */
 
   h2 {
     font-size: 1.3rem;
