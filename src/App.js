@@ -5,6 +5,7 @@ import Form from './component/Form';
 import Info from './component/Info';
 import Header from './component/Header';
 import Paragraph from './component/Paragraph';
+import BasicForm from "./component/BasicForm";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <title>Hipster Lorem Ipsum</title>
       </Helmet>
       <Header/>
+      <BasicForm/>
       <Paragraph/>
 
       {/* <Info/>

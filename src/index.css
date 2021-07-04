@@ -84,10 +84,6 @@ code {
     monospace;
 }
 
-form input {
-  max-width: 4rem;
-}
-
 form {
   padding: 5%;
   margin-bottom: 15%;
