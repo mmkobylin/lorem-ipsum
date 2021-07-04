@@ -26,23 +26,26 @@ const BasicForm = () => {
     let incrementCounter = () => setCounter(counter + 1);
     let decrementCounter = () => setCounter(counter - 1);
     // dealing with negative values
-    if(counter<=0) { decrementCounter = () => setCounter(1); };
+    if(counter<=0) { decrementCounter = () => setCounter(0); };
 
     return (
         <section className="section-center">
-            <form
+            <form 
             // making sure that the submitting form is an option
             onSubmit = { handleSubmit }
             >
-                <label htmlFor="amount">Paragraphs?</label>
+                <p>Paragraphs?</p>
                 <button onClick={incrementCounter}
                 style = { { cursor: 'pointer'} }
                 >+</button>
-                <p //e sets event 
-                    onChange = { handleChange }
-                > { counter } </p>
+                <p className = 'counter'
+                // value = { counter }
+                //e sets event 
+                onChange = { handleChange }
+                >{ counter } </p>
                 <button 
                 style = { !counter ? { cursor: 'not-allowed' } : { cursor: 'pointer'} }
+                disabled = { !counter  }  
                 onClick={decrementCounter}>-</button>
 
                 <button 

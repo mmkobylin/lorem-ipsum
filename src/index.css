@@ -13,8 +13,21 @@ article {
   padding: 1.5rem
 }
 
+form * {
+  display: inline;
+  white-space: nowrap;
+  min-width: 50px;
+  padding: 25px;
+}
+.counter {
+  width: 3rem;
+}
 article p {
   transform: scale(0.9);
+}
+
+p {
+  min-width: fit-content;
 }
 
 .break {
@@ -32,6 +45,8 @@ body {
 
 button {
   padding: 2vw;
+  min-width: 70px;
+  min-height: 50px;
   border-radius: 4%;
   text-transform: uppercase;
   background-color: #7DE2D1;
@@ -85,33 +100,24 @@ code {
 }
 
 form {
-  padding: 5%;
-  margin-bottom: 15%;
-  text-align: center;
   background-color: #FFF2F1;
   box-shadow: 0px 10px 13px -7px #000000, 5px -6px 22px 5px rgb(0 0 0 / 47%);
 }
 
 /* all children of form */
-form * {
-  margin: 4vw;
-  padding: 3%;
-}
-
 
 @media only screen and (min-width: 700px) {
   button {
     /* remember background, no color */
     background: linear-gradient(145deg, #087E8B 50%, #7DE2D1 50% );
-    background-size: 300%, 100%;
-    background-position: right bottom;
+    background-size: 400%;
+    background-position: right top;
     transition: all 0.5s ease;
   }
   
   button:hover:enabled {
     color: #FFF2F1;
     background-position: left bottom;
-    background-position: left bottom
   }
 
   article {
@@ -155,6 +161,7 @@ form * {
     transform: scale(1.2);
   }
 
+  
 }
 
 @media only screen and (min-width: 1200px) {
@@ -200,9 +207,9 @@ form * {
     padding: 15px;
   }
 
-  /* form label, form input {
+  form label, form input {
     margin-top: 3rem;
-  } */
+  } 
 
   h2 {
     font-size: 1.3rem;
@@ -223,10 +230,6 @@ form * {
 
   .info * {
     transform: scale(1.25);
-  }
-
-  .info p {
-    text-align: center;
   }
 
   .lorem-text {
