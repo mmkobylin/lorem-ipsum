@@ -72,7 +72,8 @@ const Form = () => {
 
           capitals(duplication());
           // all paragraphs, at least that
-          setText(newWords[i].slice(0, count));  
+          setText(newWords[i]);  
+          console.log(text)
         // displays all 5 in the thing, but it does it by iteration, not addition.
         }
       }
@@ -115,8 +116,8 @@ const Form = () => {
         </form>
       </section>
       <article className="lorem-text">
-        {text } 
-        {/* map((paragraph, index) => (
+        {text}
+        {/* .map((paragraph, index) => (
           <p className = 'break' key={index}>{paragraph}</p>
         ))}  */}
     </article>
